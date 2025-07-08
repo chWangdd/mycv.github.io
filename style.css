@@ -24,7 +24,7 @@ body {
 }
 
 .header p {
-  font-size: 3vw;         /* Responsive subtitle */
+  font-size: 5vw;         /* Responsive subtitle */
   font-weight: 300;
   margin-top: 10px;
   margin-bottom: 0;
