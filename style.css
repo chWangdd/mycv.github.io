@@ -57,17 +57,3 @@ body {
   100% { transform: translateY(-10px); }
 }
 
-/* Mobile Tweaks */
-@media (max-width: 600px) {
-  .header h1 {
-    font-size: 7vw;
-  }
-
-  .header p {
-    font-size: 5vw;
-  }
-
-  .camera-container img {
-    width: 70vw;
-  }
-}
