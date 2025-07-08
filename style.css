@@ -18,13 +18,13 @@ body {
 }
 
 .header h1 {
-  font-size: 3vw;         /* Responsive title */
+  font-size: 5vw;         /* Responsive title */
   font-weight: bold;
   margin: 0;
 }
 
 .header p {
-  font-size: 1vw;         /* Responsive subtitle */
+  font-size: 3vw;         /* Responsive subtitle */
   font-weight: 300;
   margin-top: 10px;
   margin-bottom: 0;
