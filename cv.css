@@ -1,0 +1,202 @@
+/* style.css — 主樣式表 */
+
+:root {
+  /* light theme */
+  --primary: #0c4a6e;
+  --accent: #0891b2;
+  --bg: #f2f5f7;
+  --card: #ffffff;
+  --text: #1e293b;
+  /* dark theme */
+  --primary-dark: #164e63;
+  --accent-dark: #0e7490;
+  --bg-dark: #0f172a;
+  --card-dark: #1e293b;
+  --text-dark: #f1f5f9;
+  /* misc */
+  --radius: 1rem;
+  --shadow: 0 4px 14px rgba(0 0 0 / 0.08);
+  --speed: 0.4s;
+}
+
+/* ====== RESET ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  transition: background var(--speed) ease, color var(--speed) ease,
+    border-color var(--speed) ease;
+}
+
+/* ====== GLOBAL ====== */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ====== HEADER ====== */
+header {
+  position: relative;
+  background: var(--primary);
+  color: #fff;
+  padding: 2.5rem 1rem 4rem;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+body.dark header {
+  background: var(--primary-dark);
+}
+header h1 {
+  font-size: 2.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown var(--speed) ease 0.1s both;
+}
+header h2 {
+  font-weight: 300;
+  font-size: 1.15rem;
+  animation: fadeInDown var(--speed) ease 0.25s both;
+}
+
+/* theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.8rem;
+}
+
+/* ====== LAYOUT ====== */
+.container {
+  max-width: 960px;
+  margin: -3rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* ====== SIDEBAR ====== */
+aside {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+body.dark aside {
+  background: var(--card-dark);
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px var(--accent);
+  animation: popIn 0.6s cubic-bezier(0.25, 1.25, 0.5, 1) both;
+}
+body.dark .avatar {
+  box-shadow: 0 0 0 4px var(--accent-dark);
+}
+
+/* collapsible details */
+details {
+  margin-bottom: 1.2rem;
+}
+details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+details[open] summary svg {
+  transform: rotate(90deg);
+}
+details ul,
+.points {
+  list-style: disc inside;
+  margin-left: 0.4rem;
+}
+
+/* ====== CONTENT CARDS ====== */
+main section {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+body.dark main section {
+  background: var(--card-dark);
+}
+main h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.5rem;
+}
+body.dark main h3 {
+  color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.flex-row h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+.flex-row span {
+  font-size: 0.9rem;
+  color: #525b70;
+}
+body.dark .flex-row span {
+  color: #94a3b8;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
