@@ -18,9 +18,16 @@ body {
 }
 
 .header h1 {
-  font-size: 6vw; /* Responsive font size */
+  font-size: 6vw;         /* Responsive title */
   font-weight: bold;
   margin: 0;
+}
+
+.header p {
+  font-size: 4vw;         /* Responsive subtitle */
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 /* Camera */
@@ -53,7 +60,11 @@ body {
 /* Mobile Tweaks */
 @media (max-width: 600px) {
   .header h1 {
-    font-size: 5.5vw;
+    font-size: 7vw;
+  }
+
+  .header p {
+    font-size: 5vw;
   }
 
   .camera-container img {
