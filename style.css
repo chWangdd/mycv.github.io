@@ -1,4 +1,4 @@
-/* Base Styles */
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Noto Sans TC', sans-serif;
@@ -18,27 +18,45 @@ body {
 }
 
 .header h1 {
-  font-size: 28px;
+  font-size: 6vw; /* Responsive font size */
   font-weight: bold;
   margin: 0;
 }
 
-/* Camera Animation */
+/* Camera */
 .camera-container {
   margin-top: 40px;
-  animation: jump 1s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
 }
 
 .camera-container img {
-  width: 200px;
+  width: 50vw;
+  max-width: 200px;
   height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Jump Animation */
+.jump {
+  animation: jump 0.5s ease;
 }
 
 @keyframes jump {
-  0%, 100% {
-    transform: translateY(0);
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-30px); }
+  60%  { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 5.5vw;
   }
-  50% {
-    transform: translateY(-30px);
+
+  .camera-container img {
+    width: 70vw;
   }
 }
