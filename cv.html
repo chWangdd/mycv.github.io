@@ -1,0 +1,143 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>王俊皓 ‧ Interactive CV</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- 主樣式 -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons library (lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header>
+      <button class="theme-toggle" aria-label="theme toggle">
+        <i data-lucide="moon"></i>
+      </button>
+      <h1>王俊皓</h1>
+      <h2 class="typing">Electrical Engineering Student • Machine Learning & IC Design Enthusiast</h2>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <aside>
+        <img src="https://placehold.co/120x120?text=Photo" alt="Avatar" class="avatar" />
+
+        <details open>
+          <summary><i data-lucide="phone"></i>聯絡資訊</summary>
+          <ul>
+            <li>電話 +886 912‑345‑678</li>
+            <li>Email your.email@ntu.edu.tw</li>
+            <li>地址 台北市大安區</li>
+            <li>GitHub github.com/yourhandle</li>
+            <li>LinkedIn linkedin.com/in/yourprofile</li>
+          </ul>
+        </details>
+
+        <details open>
+          <summary><i data-lucide="code"></i>技能</summary>
+          <ul class="points">
+            <li>Python / C++ / Verilog</li>
+            <li>PyTorch • TensorFlow</li>
+            <li>FPGA 開發與時序分析</li>
+            <li>EDA: Synopsys DC, OpenSTA</li>
+            <li>Git / Linux</li>
+            <li>英語 (TOEIC 930)</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary><i data-lucide="sparkles"></i>興趣</summary>
+          <ul class="points">
+            <li>AI 影像處理</li>
+            <li>攝影與後製</li>
+            <li>港片文化研究</li>
+          </ul>
+        </details>
+      </aside>
+
+      <!-- Main Content -->
+      <main>
+        <section class="summary reveal">
+          <h3>專業概述</h3>
+          <p>
+            國立台灣大學電機工程學系四年級生，專攻<br />
+            <strong>機器學習、FPGA 數位信號處理</strong> 與 <strong>IC Physical Design</strong>。
+            參與多項跨校研究與產業合作，具備軟硬體協同開發與團隊領導經驗。
+          </p>
+        </section>
+
+        <section class="experience reveal">
+          <h3>實務經驗</h3>
+          <div class="flex-row">
+            <h4>Research Assistant — NTU VLSI Lab</h4>
+            <span>2024 / 09 – Present</span>
+          </div>
+          <ul class="points">
+            <li>設計 2‑way FM Partitioning 演算法，減少 cutsize 18%。</li>
+            <li>使用 OpenROAD Flow 進行 45 nm 佈局，TNS 改善 35%。</li>
+          </ul>
+
+          <div class="flex-row" style="margin-top:1rem;">
+            <h4>Machine Learning Intern — XYZ Tech</h4>
+            <span>2023 / 07 – 2023 / 09</span>
+          </div>
+          <ul class="points">
+            <li>以 PyTorch 部署卷積神經網路推論系統，Inference Latency 降低 26%。</li>
+            <li>與前端團隊協作，完成 WebAPI + Docker 化。</li>
+          </ul>
+        </section>
+
+        <section class="education reveal">
+          <h3>學歷</h3>
+          <div class="flex-row">
+            <h4>國立台灣大學 — 電機工程學士</h4>
+            <span>2021 – 2025 (預計)</span>
+          </div>
+          <ul class="points">
+            <li>GPA 4.08 / 4.3 (系排名前 10%)</li>
+            <li>Relevant Coursework: IC Physical Design, Machine Learning, Computer Architecture</li>
+          </ul>
+        </section>
+
+        <section class="projects reveal">
+          <h3>專案</h3>
+          <div class="flex-row">
+            <h4>Pokémon Image Generator (Transformer‑based)</h4>
+            <span>2025</span>
+          </div>
+          <ul class="points">
+            <li>建構 Decoder‑Only Transformer 預測 VQ‑GAN Token，生成新寶可夢圖像。</li>
+            <li>使用 4×A100 進行 20 萬步訓練，FID 提升 12%。</li>
+          </ul>
+
+          <div class="flex-row" style="margin-top:1rem;">
+            <h4>Bilinear Resize Engine (FPGA)</h4>
+            <span>2024</span>
+          </div>
+          <ul class="points">
+            <li>在 Artix‑7 FPGA 上實現即時影像縮放，最高 1080p60。</li>
+            <li>使用 HLS + Verilog 混和開發，資源利用率 < 30% LUT。</li>
+          </ul>
+        </section>
+
+        <section class="certificates reveal">
+          <h3>證照 & 獎項</h3>
+          <ul class="points">
+            <li>NVIDIA DLI Certificate — Fundamentals of Deep Learning</li>
+            <li>IEEE SSCS Student Research Contest — Silver (2024)</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- 功能腳本 -->
+    <script src="script.js"></script>
+  </body>
+</html>
