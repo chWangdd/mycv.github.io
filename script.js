@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   camera.addEventListener('click', () => {
     camera.classList.add('jump');
 
-    // Remove the class after animation completes (0.5s)
+    // Remove the class after animation completes
     setTimeout(() => {
       camera.classList.remove('jump');
-    }, 500);
+    }, 1500);
   });
 });

@@ -8,26 +8,59 @@ body {
   align-items: center;
 }
 
-/* Header */
+/* Header Layout */
 .header {
-  background-color: #1e3a5f;
-  color: white;
+  background-color: #fdf6ee;
+  color: black;
   width: 100%;
-  text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.header h1 {
-  font-size: 2.00rem;         /* Responsive title */
+/* Profile Image */
+.selfie img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Right Side: Text */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
 }
 
-.header p {
-  font-size: 1.15rem;         /* Responsive subtitle */
-  font-weight: 300;
-  margin-top: 8px;
-  margin-bottom: 0;
+.header-text p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+
+.header-text a {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+
+.header-text a:hover {
+  text-decoration: underline;
 }
 
 /* Camera */
@@ -57,3 +90,79 @@ body {
   100% { transform: translateY(-10px); }
 }
 
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-text p{
+    font-size: 1.2rem;
+  }
+  .header-text a {
+    font-size: 1.2rem;
+  }
+
+  .selfie img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* -------- GitHub icon -------- */
+.github-icon{
+  display:inline-block;          /* ★ 讓 a 變 block 範圍 */
+  line-height:0;                 /* ★ 消除基線高度 */
+  text-decoration:none!important;/* ★ 去掉所有底線 */
+  color:inherit;                 /* 保持顏色繼承，避免藍色 */
+  outline:none;
+}
+
+.github-wrapper{
+  width:42px;height:42px;
+  border-radius:12px;
+  background:#fff;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  cursor:pointer;
+}
+
+.github-wrapper i{
+  font-size:24px;
+  color:#000;
+  z-index:1;                /* keep icon above wave */
+  transition:color .35s ease,transform .35s ease;
+}
+
+/* water layer */
+.github-wrapper::before{
+  content:'';
+  position:absolute;inset:0;          /* top/right/bottom/left:0 */
+  background:#000;
+  transform:translateY(100%);         /* start below */
+  transition:transform .35s ease;
+  border-radius:inherit;
+}
+
+/* hover = water rises & icon turns white */
+.github-wrapper:hover::before{
+  transform:translateY(0);
+}
+.github-wrapper:hover i{
+  color:#fff;
+  transform:scale(1.1);
+}
+
+/* remove weird blue-focus sticks */
+.github-icon:focus-visible,
+.github-wrapper:focus-visible{outline:none}
